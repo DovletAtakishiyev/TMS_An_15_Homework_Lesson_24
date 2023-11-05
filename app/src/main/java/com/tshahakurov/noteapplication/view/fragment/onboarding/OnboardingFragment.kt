@@ -26,7 +26,7 @@ class OnboardingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding){
+        with(binding) {
             discoverButton.setOnClickListener {
                 parentFragmentManager.replaceFragmentWithStack(
                     R.id.fragmentContainer, OnboardingViewPagerFragment()
@@ -39,7 +39,6 @@ class OnboardingFragment : Fragment() {
                 )
             }
         }
-
     }
 
     override fun onDestroy() {

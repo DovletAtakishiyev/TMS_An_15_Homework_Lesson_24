@@ -26,9 +26,9 @@ class OnboardingViewPagerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-            viewPager.adapter = ViewPagerAdapter(parentFragmentManager)
+            viewPager.adapter = ViewPagerAdapter(childFragmentManager)
             circleIndicator.setViewPager(viewPager)
-            skipButtonText.setOnClickListener{
+            skipButtonText.setOnClickListener {
                 parentFragmentManager.replaceFragment(
                     R.id.fragmentContainer, LoginFragment()
                 )

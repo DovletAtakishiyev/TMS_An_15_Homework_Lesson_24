@@ -7,10 +7,36 @@
     <string name="discover">Discover</string>
     <string name="login_option">Have an account?</string>
     <string name="login">Log-in</string>
+    <string name="sign_in">Sign-in</string>
     <string name="skip">Skip</string>
-    
+
     <string name="first_step">First Step</string>
     <string name="second_step">Second Step</string>
     <string name="third_step">Third Step</string>
 
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="dont_have_account">You don\'t have an account? <b>Sign-In</b></string>
+    <string name="already_have_account">Do you already have an account? <b>Log-In</b></string>
+
+    <string name="login_successful">Logged-In Successfully!</string>
+    <string name="sign_in_successful">Signed-In Successfully!</string>
+
+    <string name="no_data">No Data Provided</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
+    <string name="add_to_list">Add Note</string>
+    <string name="clear">Clear</string>
+
+    <string name="default_title">Title</string>
+    <string name="default_body">Body</string>
+    <string name="default_date">dd/mm/yyyy</string>
+    <string name="default_priority">10/10</string>
+
+    <string name="share_button">Share</string>
+    <string name="important_chb">Mark as Important</string>
+    <string name="priority">Priority</string>
+    <string name="priority_input">5/10</string>
 </resources>

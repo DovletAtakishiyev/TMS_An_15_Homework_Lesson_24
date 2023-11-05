@@ -7,36 +7,36 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.tshahakurov.noteapplication.R
-import com.tshahakurov.noteapplication.databinding.FragmentLoginBinding
+import com.tshahakurov.noteapplication.databinding.FragmentSigninBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.view.fragment.book.list.NoteListFragment
 
-class LoginFragment : Fragment() {
+class SignInFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentSigninBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentSigninBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-            signInButtonText.setOnClickListener {
+            loginButtonText.setOnClickListener {
                 parentFragmentManager.replaceFragment(
-                    R.id.fragmentContainer, SignInFragment()
+                    R.id.fragmentContainer, LoginFragment()
                 )
             }
-            loginButton.setOnClickListener {
+            signInButton.setOnClickListener {
                 parentFragmentManager.replaceFragment(
                     R.id.fragmentContainer, NoteListFragment()
                 )
-                Toast.makeText(requireContext(), R.string.login_successful, Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), R.string.sign_in_successful, Toast.LENGTH_SHORT)
                     .show()
             }
         }

@@ -17,7 +17,7 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Handler().postDelayed({
-              parentFragmentManager.replaceFragment(R.id.fragmentContainer, OnboardingFragment())
+            parentFragmentManager.replaceFragment(R.id.fragmentContainer, OnboardingFragment())
         }, 1000L)
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }

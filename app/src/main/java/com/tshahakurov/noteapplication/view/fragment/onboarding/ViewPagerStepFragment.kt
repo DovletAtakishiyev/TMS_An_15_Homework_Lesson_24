@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.ExecutorCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.tshahakurov.noteapplication.R
@@ -32,7 +31,7 @@ class ViewPagerStepFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.getInt(STEP_KEY)?.run {
-            binding.pagerItemImage.setImageResource (
+            binding.pagerItemImage.setImageResource(
                 when (this) {
                     STEP_1 -> R.drawable.splash_img
                     STEP_2 -> R.drawable.splash_img

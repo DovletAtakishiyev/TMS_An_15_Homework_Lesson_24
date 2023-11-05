@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
 class ViewPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager) {
+
     private val list = arrayListOf(
         ViewPagerStepFragment.getStep(STEP_1),
         ViewPagerStepFragment.getStep(STEP_2),
