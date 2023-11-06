@@ -1,13 +1,13 @@
-package com.tshahakurov.noteapplication.model
+package com.tshahakurov.noteapplication.model.entity
 
 import android.os.Parcelable
+import com.tshahakurov.noteapplication.model.ListItem
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-sealed interface ListItem : Parcelable {
+sealed interface ListItemEntity : Parcelable {
 
     val id: Int
-
 
     @Parcelize
     data class BasicNote(
@@ -15,7 +15,7 @@ sealed interface ListItem : Parcelable {
         val title: String,
         val body: String,
         val date: String
-    ) : ListItem {
+    ) : ListItemEntity {
 
         override fun toString(): String {
             return """Basic Note :
@@ -33,7 +33,7 @@ sealed interface ListItem : Parcelable {
         val body: String,
         val date: String,
         val priority: Int
-    ) : ListItem {
+    ) : ListItemEntity {
 
         constructor(
             basicNote: BasicNote,
@@ -53,14 +53,6 @@ sealed interface ListItem : Parcelable {
                 |Date     : $date
                 |Priority : $priority
                 """.trimMargin()
-        }
-    }
-
-    companion object {
-        private var idCounter = 0;
-        fun getId(): Int {
-            idCounter++
-            return idCounter
         }
     }
 }

@@ -45,6 +45,7 @@
                 app:layout_constraintTop_toBottomOf="@id/addNoteText">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titleInputMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName" />
@@ -65,6 +66,7 @@
                 app:layout_constraintBottom_toBottomOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bodyInputMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start|top"
