@@ -57,7 +57,7 @@ sealed interface ListItem : Parcelable {
     }
 
     companion object {
-        private var idCounter = 0;
+        private var idCounter = 0
         fun getId(): Int {
             idCounter++
             return idCounter
