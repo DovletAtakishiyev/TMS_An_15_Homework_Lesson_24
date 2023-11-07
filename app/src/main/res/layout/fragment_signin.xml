@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".view.fragment.registration.SignInFragment">
+    tools:context=".view.fragment.registration.signin.SignInFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardBackground"
@@ -31,7 +31,7 @@
                 android:text="@string/sign_in" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/firstNameInput"
+                android:id="@+id/firstNameInputLayout"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -40,13 +40,14 @@
                 app:boxCornerRadiusBottomEnd="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/firstNameInputMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/lastNameInput"
+                android:id="@+id/lastNameInputLayout"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -55,13 +56,14 @@
                 app:boxCornerRadiusBottomEnd="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastNameInputMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/emailInput"
+                android:id="@+id/emailInputLayout"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
@@ -70,13 +72,14 @@
                 app:boxCornerRadiusBottomEnd="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailInputMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField"
+                android:id="@+id/passwordInputLayout"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
@@ -84,6 +87,7 @@
                 app:boxCornerRadiusBottomEnd="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordInputMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />

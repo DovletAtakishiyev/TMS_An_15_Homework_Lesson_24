@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".view.fragment.registration.LoginFragment">
+    tools:context=".view.fragment.registration.login.LoginFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardBackground"
@@ -29,7 +29,7 @@
                 android:text="@string/login" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/emailInput"
+                android:id="@+id/emailInputLayout"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -38,13 +38,14 @@
                 app:boxCornerRadiusBottomEnd="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailInputMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField"
+                android:id="@+id/passwordInputLayout"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
@@ -52,6 +53,7 @@
                 app:boxCornerRadiusBottomEnd="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordInputMain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />

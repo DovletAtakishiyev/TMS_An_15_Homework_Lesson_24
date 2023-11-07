@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentOnboardingViewPagerBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
-import com.tshahakurov.noteapplication.view.fragment.registration.LoginFragment
+import com.tshahakurov.noteapplication.view.fragment.registration.login.LoginFragment
 
 class OnboardingViewPagerFragment : Fragment() {
 

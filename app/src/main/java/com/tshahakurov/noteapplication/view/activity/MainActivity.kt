@@ -1,6 +1,7 @@
-package com.tshahakurov.noteapplication.view
+package com.tshahakurov.noteapplication.view.activity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.util.replaceFragment
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         supportFragmentManager.replaceFragment(
             R.id.fragmentContainer,
             SplashFragment()
