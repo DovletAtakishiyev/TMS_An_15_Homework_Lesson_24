@@ -7,52 +7,74 @@
     android:background="@drawable/background"
     tools:context=".view.fragment.book.info.NoteInformationFragment">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/titleTextView"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        style="@style/DefaultBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="132dp"
-        android:text="@string/default_title"
+        android:layout_marginTop="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/dateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/default_date"
-        app:layout_constraintStart_toStartOf="@+id/titleTextView"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="50dp">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/bodyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/default_body"
-        app:layout_constraintStart_toStartOf="@+id/dateTextView"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleTextView"
+                style="@style/DefaultText.Primary.Header.Card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/priorityTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/priority"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/bodyTextView"
-        app:layout_constraintTop_toBottomOf="@+id/bodyTextView" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dateTextView"
+                style="@style/DefaultText.Primary.Header.Card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/default_date"
+                app:layout_constraintStart_toStartOf="@+id/titleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bodyTextView"
+                style="@style/DefaultText.Primary.Header.Card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/default_body"
+                app:layout_constraintStart_toStartOf="@+id/dateTextView"
+                app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/priorityTextView"
+                style="@style/DefaultText.Primary.Header.Card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/priority"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/bodyTextView"
+                app:layout_constraintTop_toBottomOf="@+id/bodyTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/shareButton"
-        android:layout_width="wrap_content"
+        style="@style/DefaultText.Button"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/share_button"
-        app:layout_constraintStart_toStartOf="@+id/priorityTextView"
-        app:layout_constraintTop_toBottomOf="@+id/priorityTextView" />
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/warningImageView"

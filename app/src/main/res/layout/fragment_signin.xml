@@ -9,6 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardBackground"
+        style="@style/DefaultBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
@@ -25,6 +26,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textview.MaterialTextView
+                style="@style/DefaultText.Primary.Header.Card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -32,6 +34,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/firstNameInputLayout"
+                style="@style/DefaultText.Primary.Input"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -41,13 +44,16 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/firstNameInputMain"
+                    style="@style/DefaultText.Primary.Input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/lastNameInputLayout"
+                style="@style/DefaultText.Primary.Input"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -57,13 +63,16 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/lastNameInputMain"
+                    style="@style/DefaultText.Primary.Input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailInputLayout"
+                style="@style/DefaultText.Primary.Input"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
@@ -73,6 +82,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailInputMain"
+                    style="@style/DefaultText.Primary.Input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress" />
@@ -80,6 +90,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordInputLayout"
+                style="@style/DefaultText.Primary.Input"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
@@ -88,6 +99,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordInputMain"
+                    style="@style/DefaultText.Primary.Input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
@@ -98,16 +110,19 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signInButton"
+        style="@style/DefaultText.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="52dp"
         android:text="@string/sign_in"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardBackground" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/loginButtonText"
+        style="@style/DefaultText.Primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentOnboardingBinding
+import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
 import com.tshahakurov.noteapplication.view.fragment.registration.login.LoginFragment
 

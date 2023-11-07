@@ -4,7 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     
     <!--Custom Colors-->
-    <color name="splash_background">#6934E8</color>
+    <color name="splash_background">#7E5FC6</color>
     <color name="indicator_on">#491FAF</color>
     <color name="indicator_off">#675595</color>
 
@@ -17,5 +17,11 @@
     <color name="add_note_fragment">#8888ff</color>
     <color name="note_info_fragment">#44aa44</color>
 
-    <color name="almost_transparent">#99A48AEF</color>
+    <color name="transparent_purple">#DDA26AF1</color>
+    <color name="transparent_white">#DAE2DAEF</color>
+
+    <color name="yellow">#FFD15D</color>
+    <color name="main_purple">#6C1FAF</color>
+    <color name="dark_purple">#440A77</color>
+    <color name="secondary_purple">#8F56C1</color>
 </resources>

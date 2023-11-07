@@ -28,6 +28,7 @@ class OnboardingViewPagerFragment : Fragment() {
         with(binding) {
             viewPager.adapter = ViewPagerAdapter(childFragmentManager)
             circleIndicator.setViewPager(viewPager)
+
             skipButtonText.setOnClickListener {
                 parentFragmentManager.replaceFragment(
                     R.id.fragmentContainer, LoginFragment()

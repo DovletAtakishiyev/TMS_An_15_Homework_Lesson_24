@@ -13,6 +13,13 @@ class SignInViewModel(application: Application) : AndroidViewModel(application) 
     val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
 
+    init {
+        firstName.value = ""
+        lastName.value = ""
+        email.value = ""
+        password.value = ""
+    }
+
     fun validateUser(): Boolean {
         return if (isEmailValid() && isFirstNameValid() && isLastNameValid() && isPasswordValid()) {
             sharedPreferencesRepo.setUserEmail(email.value.toString())

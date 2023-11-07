@@ -33,9 +33,9 @@ class ViewPagerStepFragment : Fragment() {
         arguments?.getInt(STEP_KEY)?.run {
             binding.pagerItemImage.setImageResource(
                 when (this) {
-                    STEP_1 -> R.drawable.splash_img
-                    STEP_2 -> R.drawable.splash_img
-                    STEP_3 -> R.drawable.splash_img
+                    STEP_1 -> R.drawable.ic_work
+                    STEP_2 -> R.drawable.ic_shop
+                    STEP_3 -> R.drawable.ic_location
                     else -> throw IllegalStateException()
                 }
             )

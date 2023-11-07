@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentSigninBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
+import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
 import com.tshahakurov.noteapplication.view.fragment.book.list.NoteListFragment
 import com.tshahakurov.noteapplication.view.fragment.registration.login.LoginFragment
 
@@ -46,11 +47,6 @@ class SignInFragment : Fragment() {
                 viewModel.password.value = it.toString()
             }
 
-            loginButtonText.setOnClickListener {
-                parentFragmentManager.replaceFragment(
-                    R.id.fragmentContainer, LoginFragment()
-                )
-            }
 
             signInButton.setOnClickListener {
                 if (viewModel.validateUser()){
@@ -64,6 +60,12 @@ class SignInFragment : Fragment() {
                     Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT)
                         .show()
                 }
+            }
+
+            loginButtonText.setOnClickListener {
+                parentFragmentManager.replaceFragment(
+                    R.id.fragmentContainer, LoginFragment()
+                )
             }
         }
     }

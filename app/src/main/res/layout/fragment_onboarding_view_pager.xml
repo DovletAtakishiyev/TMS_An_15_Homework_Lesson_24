@@ -10,6 +10,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/appNameText"
+        style="@style/DefaultText.Primary.AppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
@@ -25,8 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <me.relex.circleindicator.CircleIndicator
         android:id="@+id/circleIndicator"
@@ -41,9 +41,11 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/skipButtonText"
+        style="@style/DefaultText.Primary.Header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_margin="10dp"
+        android:padding="20dp"
         android:text="@string/skip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

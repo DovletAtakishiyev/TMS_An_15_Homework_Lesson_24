@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentLoginBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
+import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
 import com.tshahakurov.noteapplication.view.fragment.book.list.NoteListFragment
 import com.tshahakurov.noteapplication.view.fragment.registration.signin.SignInFragment
 
@@ -58,13 +59,10 @@ class LoginFragment : Fragment() {
             }
 
             signInButtonText.setOnClickListener {
-                parentFragmentManager.replaceFragment(
+                parentFragmentManager.replaceFragmentWithStack(
                     R.id.fragmentContainer, SignInFragment()
                 )
             }
-
-
-
         }
 
     }

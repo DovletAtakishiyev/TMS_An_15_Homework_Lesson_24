@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.NoteApplication" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -6,4 +6,62 @@
     </style>
 
     <style name="Theme.NoteApplication" parent="Base.Theme.NoteApplication" />
+
+    <style name="DefaultText">
+        <item name="fontFamily">@font/quicksand_regular</item>
+    </style>
+
+    <style name="DefaultText.SplashText">
+        <item name="android:textSize">30sp</item>
+        <item name="fontFamily">@font/quicksand_bold</item>
+        <item name="android:textColor">@color/yellow</item>
+    </style>
+
+    <style name="DefaultText.OnboardingText">
+        <item name="android:textSize">50sp</item>
+        <item name="android:textColor">@color/main_purple</item>
+        <item name="fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="DefaultText.Primary">
+        <item name="fontFamily">@font/quicksand_medium</item>
+        <item name="android:textColor">@color/dark_purple</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="DefaultText.Button">
+        <item name="android:backgroundTint">@color/secondary_purple</item>
+        <item name="fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="DefaultText.Primary.AppName">
+        <item name="fontFamily">@font/quicksand_bold</item>
+        <item name="android:textColor">@color/dark_purple</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="DefaultText.Primary.Header">
+        <item name="android:textSize">20sp</item>
+        <item name="android:alpha">0.7</item>
+        <item name="fontFamily">@font/quicksand_semibold</item>
+        <item name="android:textColor">@color/dark_purple</item>
+    </style>
+
+    <style name="DefaultText.Primary.Header.Card">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:alpha">1</item>
+    </style>
+
+    <style name="DefaultBackground">
+        <item name="android:backgroundTint">@color/transparent_purple</item>
+        <item name="cardCornerRadius">20dp</item>
+    </style>
+
+    <style name="DefaultText.Primary.Input">
+        <item name="android:textColorHint">@color/transparent_white</item>
+        <item name="boxStrokeColor">@color/transparent_white</item>
+        <item name="hintTextColor">@color/transparent_white</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
 </resources>

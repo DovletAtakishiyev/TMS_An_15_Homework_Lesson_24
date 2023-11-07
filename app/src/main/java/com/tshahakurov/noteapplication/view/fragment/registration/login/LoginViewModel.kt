@@ -12,6 +12,11 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val email = MutableLiveData<String>()
     val password = MutableLiveData<String>()
 
+    init {
+        email.value = ""
+        password.value = ""
+    }
+
     fun validateUser(): Boolean {
         return if (isEmailValid() && isPasswordIsValid()) {
             sharedPreferencesRepo.setUserEmail(email.value.toString())
