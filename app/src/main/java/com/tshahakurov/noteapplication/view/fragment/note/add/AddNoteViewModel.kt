@@ -1,10 +1,11 @@
-package com.tshahakurov.noteapplication.view.fragment.book.add
+package com.tshahakurov.noteapplication.view.fragment.note.add
 
 import android.icu.text.SimpleDateFormat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tshahakurov.noteapplication.model.ListItem
 import com.tshahakurov.noteapplication.repository.NoteRepository
+import com.tshahakurov.noteapplication.util.Util
 import java.util.Date
 import java.util.Locale
 
@@ -25,7 +26,7 @@ class AddNoteViewModel : ViewModel() {
     private fun createNote() {
         val titleValue = title.value ?: ""
         val bodyValue = body.value ?: ""
-        val currentDate = getCurrentDate()
+        val currentDate = Util.getCurrentDate()
 
         if (titleValue.isNotBlank() && bodyValue.isNotBlank()) {
             val basicNote = ListItem.BasicNote(ListItem.getId(), titleValue, bodyValue, currentDate)
@@ -38,7 +39,4 @@ class AddNoteViewModel : ViewModel() {
             }
         }
     }
-
-    private fun getCurrentDate(): String =
-        SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())
 }

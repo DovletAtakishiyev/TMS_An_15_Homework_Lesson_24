@@ -1,4 +1,4 @@
-package com.tshahakurov.noteapplication.view.fragment.book.list
+package com.tshahakurov.noteapplication.view.fragment.note.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,10 +12,10 @@ import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentNoteListBinding
 import com.tshahakurov.noteapplication.model.ListItem
 import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
-import com.tshahakurov.noteapplication.view.fragment.book.add.AddNoteFragment
-import com.tshahakurov.noteapplication.view.fragment.book.info.BUNDLE_KEY
-import com.tshahakurov.noteapplication.view.fragment.book.info.NoteInformationFragment
-import com.tshahakurov.noteapplication.view.fragment.book.list.adapter.CustomAdapter
+import com.tshahakurov.noteapplication.view.fragment.note.add.AddNoteFragment
+import com.tshahakurov.noteapplication.view.fragment.note.info.BUNDLE_KEY
+import com.tshahakurov.noteapplication.view.fragment.note.info.NoteInformationFragment
+import com.tshahakurov.noteapplication.view.fragment.note.list.adapter.CustomAdapter
 
 class NoteListFragment : Fragment() {
 

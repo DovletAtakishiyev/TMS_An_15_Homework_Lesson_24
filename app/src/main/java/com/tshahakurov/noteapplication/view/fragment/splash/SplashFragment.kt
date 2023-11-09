@@ -5,13 +5,11 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.util.replaceFragment
-import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
-import com.tshahakurov.noteapplication.view.fragment.book.list.NoteListFragment
+import com.tshahakurov.noteapplication.view.fragment.note.list.NoteListFragment
 import com.tshahakurov.noteapplication.view.fragment.onboarding.OnboardingFragment
 
 class SplashFragment : Fragment() {

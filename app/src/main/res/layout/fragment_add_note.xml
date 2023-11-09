@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".view.fragment.book.add.AddNoteFragment">
+    tools:context=".view.fragment.note.add.AddNoteFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"

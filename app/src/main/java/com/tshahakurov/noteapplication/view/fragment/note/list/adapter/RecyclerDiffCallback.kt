@@ -1,4 +1,4 @@
-package com.tshahakurov.noteapplication.view.fragment.book.list.adapter
+package com.tshahakurov.noteapplication.view.fragment.note.list.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.tshahakurov.noteapplication.model.ListItem

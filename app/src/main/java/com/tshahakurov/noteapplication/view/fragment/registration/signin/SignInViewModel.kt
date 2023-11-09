@@ -8,17 +8,10 @@ import com.tshahakurov.noteapplication.util.isEmailValid
 
 class SignInViewModel(application: Application) : AndroidViewModel(application) {
     private val sharedPreferencesRepo = SharedPreferencesRepo(application.applicationContext)
-    val firstName = MutableLiveData<String>()
-    val lastName = MutableLiveData<String>()
-    val email = MutableLiveData<String>()
-    val password = MutableLiveData<String>()
-
-    init {
-        firstName.value = ""
-        lastName.value = ""
-        email.value = ""
-        password.value = ""
-    }
+    val firstName = MutableLiveData("")
+    val lastName = MutableLiveData("")
+    val email = MutableLiveData("")
+    val password = MutableLiveData("")
 
     fun validateUser(): Boolean {
         return if (isEmailValid() && isFirstNameValid() && isLastNameValid() && isPasswordValid()) {

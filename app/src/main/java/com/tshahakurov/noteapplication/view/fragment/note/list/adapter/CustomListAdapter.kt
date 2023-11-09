@@ -1,11 +1,11 @@
-package com.tshahakurov.noteapplication.view.fragment.book.list.adapter
+package com.tshahakurov.noteapplication.view.fragment.note.list.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.tshahakurov.noteapplication.model.ListItem
-import com.tshahakurov.noteapplication.view.fragment.book.list.adapter.viewholder.BasicNoteViewHolder
-import com.tshahakurov.noteapplication.view.fragment.book.list.adapter.viewholder.ImportantNoteViewHolder
+import com.tshahakurov.noteapplication.view.fragment.note.list.adapter.viewholder.BasicNoteViewHolder
+import com.tshahakurov.noteapplication.view.fragment.note.list.adapter.viewholder.ImportantNoteViewHolder
 
 class CustomAdapter(
     private val onClickListener: (position: ListItem) -> Unit

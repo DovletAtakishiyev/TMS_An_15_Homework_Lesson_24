@@ -1,4 +1,4 @@
-package com.tshahakurov.noteapplication.view.fragment.book.info
+package com.tshahakurov.noteapplication.view.fragment.note.info
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

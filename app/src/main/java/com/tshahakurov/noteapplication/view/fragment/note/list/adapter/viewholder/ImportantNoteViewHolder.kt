@@ -1,4 +1,4 @@
-package com.tshahakurov.noteapplication.view.fragment.book.list.adapter.viewholder
+package com.tshahakurov.noteapplication.view.fragment.note.list.adapter.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

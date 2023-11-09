@@ -1,4 +1,4 @@
-package com.tshahakurov.noteapplication.view.fragment.book.add
+package com.tshahakurov.noteapplication.view.fragment.note.add
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

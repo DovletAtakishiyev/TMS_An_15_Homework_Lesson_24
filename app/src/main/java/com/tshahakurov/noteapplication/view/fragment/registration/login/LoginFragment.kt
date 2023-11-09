@@ -10,9 +10,10 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentLoginBinding
+import com.tshahakurov.noteapplication.util.Util
 import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
-import com.tshahakurov.noteapplication.view.fragment.book.list.NoteListFragment
+import com.tshahakurov.noteapplication.view.fragment.note.list.NoteListFragment
 import com.tshahakurov.noteapplication.view.fragment.registration.signin.SignInFragment
 
 class LoginFragment : Fragment() {
@@ -32,6 +33,8 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        Util.isLogin = true
+
         with(binding) {
 
             emailInputMain.addTextChangedListener {
@@ -51,7 +54,7 @@ class LoginFragment : Fragment() {
                     )
                 } else {
                     passwordInputMain.setText("")
-                    Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT)
+                    Toast.makeText(requireContext(), Util.REGISTRATION_ERROR_MESSAGE, Toast.LENGTH_SHORT)
                         .show()
                 }
 

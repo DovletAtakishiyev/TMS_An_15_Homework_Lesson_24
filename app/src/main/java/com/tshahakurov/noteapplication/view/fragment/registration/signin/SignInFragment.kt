@@ -10,10 +10,9 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentSigninBinding
+import com.tshahakurov.noteapplication.util.Util
 import com.tshahakurov.noteapplication.util.replaceFragment
-import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
-import com.tshahakurov.noteapplication.view.fragment.book.list.NoteListFragment
-import com.tshahakurov.noteapplication.view.fragment.registration.login.LoginFragment
+import com.tshahakurov.noteapplication.view.fragment.note.list.NoteListFragment
 
 class SignInFragment : Fragment() {
 
@@ -49,23 +48,29 @@ class SignInFragment : Fragment() {
 
 
             signInButton.setOnClickListener {
-                if (viewModel.validateUser()){
-                    Toast.makeText(requireContext(), R.string.sign_in_successful, Toast.LENGTH_SHORT)
+                if (viewModel.validateUser()) {
+                    Toast.makeText(
+                        requireContext(),
+                        R.string.sign_in_successful,
+                        Toast.LENGTH_SHORT
+                    )
                         .show()
                     parentFragmentManager.replaceFragment(
                         R.id.fragmentContainer, NoteListFragment()
                     )
                 } else {
                     passwordInputMain.setText("")
-                    Toast.makeText(requireContext(), "Something went wrong", Toast.LENGTH_SHORT)
+                    Toast.makeText(
+                        requireContext(),
+                        Util.REGISTRATION_ERROR_MESSAGE,
+                        Toast.LENGTH_SHORT
+                    )
                         .show()
                 }
             }
 
             loginButtonText.setOnClickListener {
-                parentFragmentManager.replaceFragment(
-                    R.id.fragmentContainer, LoginFragment()
-                )
+                parentFragmentManager.popBackStack()
             }
         }
     }
