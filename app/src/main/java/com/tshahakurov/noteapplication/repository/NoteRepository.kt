@@ -1,21 +1,20 @@
 package com.tshahakurov.noteapplication.repository
 
-import com.tshahakurov.noteapplication.db.NoteDataBase
-import com.tshahakurov.noteapplication.model.ListItem
-import com.tshahakurov.noteapplication.util.toListItem
-import com.tshahakurov.noteapplication.util.toListItemEntity
+import com.tshahakurov.noteapplication.db.MyDataBase
+import com.tshahakurov.noteapplication.model.Note
+import com.tshahakurov.noteapplication.model.entity.NoteEntity
+import com.tshahakurov.noteapplication.util.toNote
+import com.tshahakurov.noteapplication.util.toNoteEntity
 import com.tshahakurov.noteapplication.util.toNoteList
 
 class NoteRepository {
 
-    fun getNoteList(): ArrayList<ListItem> = NoteDataBase.list.toNoteList()
+    suspend fun getNoteList(): ArrayList<Note> =
+        (MyDataBase.noteDao?.getAllNotes() as? ArrayList<NoteEntity>)?.toNoteList() ?: arrayListOf()
 
-    fun addNoteToDataBase(note: ListItem) {
-        NoteDataBase.list.add(note.toListItemEntity())
+    suspend fun getNoteById(id: Int) = MyDataBase.noteDao?.getNoteById(id)?.toNote()
+
+    suspend fun addNoteToDataBase(note: Note) {
+        MyDataBase.noteDao?.addNote(note.toNoteEntity())
     }
-
-    fun getNoteById(id: Int) =
-        NoteDataBase.list.find {
-            it.id == id
-        }?.toListItem()
 }

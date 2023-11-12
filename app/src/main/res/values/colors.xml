@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    
+
     <!--Custom Colors-->
     <color name="splash_background">#7E5FC6</color>
     <color name="indicator_on">#491FAF</color>
@@ -18,7 +18,8 @@
     <color name="note_info_fragment">#44aa44</color>
 
     <color name="transparent_purple">#DDA26AF1</color>
-    <color name="transparent_white">#DAE2DAEF</color>
+    <color name="transparent_white_9">#DAE2DAEF</color>
+    <color name="transparent_white_3">#5BE2DAEF</color>
 
     <color name="yellow">#FFD15D</color>
     <color name="main_purple">#6C1FAF</color>

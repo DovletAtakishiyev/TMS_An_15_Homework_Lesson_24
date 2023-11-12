@@ -1,141 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".view.fragment.note.add.AddNoteFragment">
+    tools:context=".view.fragment.main.note.add.AddNoteFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        style="@style/DefaultBackground"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            style="@style/DefaultBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/addNoteText"
-                style="@style/DefaultText.Primary.Header.Card"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/add_to_list"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/titleInput"
-                style="@style/DefaultText.Primary.Input"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
-                android:hint="@string/title"
-                app:boxCornerRadiusBottomEnd="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/addNoteText">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/titleInputMain"
-                    style="@style/DefaultText.Primary.Input"
-                    android:layout_width="match_parent"
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/addNoteText"
+                    style="@style/DefaultText.Primary.Header.Card"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_to_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/bodyInput"
-                style="@style/DefaultText.Primary.Input"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginHorizontal="20dp"
-                android:hint="@string/body"
-                app:boxCornerRadiusBottomEnd="20dp"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleInput">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/bodyInputMain"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/titleInput"
                     style="@style/DefaultText.Primary.Input"
-                    android:layout_width="match_parent"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine"
-                    android:lines="5" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/title"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/addNoteText">
 
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/importantCheckbox"
-        style="@style/DefaultText.Primary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/important_chb"
-        app:layout_constraintStart_toStartOf="@id/cardView"
-        app:layout_constraintTop_toBottomOf="@id/cardView" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/titleInputMain"
+                        style="@style/DefaultText.Primary.Input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/priorityTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/priority"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/bodyInput"
+                    style="@style/DefaultText.Primary.Input"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="@string/body"
+                    app:boxCornerRadiusBottomEnd="20dp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleInput">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bodyInputMain"
+                        style="@style/DefaultText.Primary.Input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine"
+                        android:lines="5" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/importantCheckbox"
+            style="@style/DefaultText.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/important_chb"
+            app:layout_constraintStart_toStartOf="@id/cardView"
+            app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/priorityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/priority"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/importantCheckbox"
+            app:layout_constraintTop_toBottomOf="@id/importantCheckbox" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/priorityInput"
+            style="@style/DefaultText.Primary.Input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/priority_input"
+            android:inputType="numberDecimal"
+            android:maxLength="2"
+            android:textColor="@color/dark_purple"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/priorityTextView"
+            app:layout_constraintStart_toEndOf="@id/priorityTextView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addNoteButton"
+            style="@style/DefaultText.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:enabled="false"
+            android:text="@string/add_to_list"
+            app:layout_constraintEnd_toStartOf="@+id/clearButton"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priorityTextView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clearButton"
+            style="@style/DefaultText.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="@string/clear"
+            app:layout_constraintBottom_toBottomOf="@+id/addNoteButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/addNoteButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/progress_bar_layout"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@id/importantCheckbox"
-        app:layout_constraintTop_toBottomOf="@id/importantCheckbox" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/priorityInput"
-        style="@style/DefaultText.Primary.Input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/priority_input"
-        android:inputType="numberDecimal"
-        android:maxLength="2"
-        android:textColor="@color/dark_purple"
-        android:visibility="gone"
-        app:layout_constraintBaseline_toBaselineOf="@id/priorityTextView"
-        app:layout_constraintStart_toEndOf="@id/priorityTextView" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/addNoteButton"
-        style="@style/DefaultText.Primary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:enabled="false"
-        android:text="@string/add_to_list"
-        app:layout_constraintEnd_toStartOf="@+id/clearButton"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priorityTextView" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/clearButton"
-        style="@style/DefaultText.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:text="@string/clear"
-        app:layout_constraintBottom_toBottomOf="@+id/addNoteButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/addNoteButton" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        layout="@layout/progress_view" />
+</FrameLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_list"
+        android:icon="@drawable/bn_ic_list"
+        android:title="List"
+        />
+    <item
+        android:id="@+id/item_search"
+        android:icon="@drawable/bn_ic_search"
+        android:title="Search" />
+    <item
+        android:id="@+id/item_bookmark"
+        android:icon="@drawable/bn_ic_bookmark"
+        android:title="Bookmark" />
+    <item
+        android:id="@+id/item_profile"
+        android:icon="@drawable/bn_ic_profile"
+        android:title="Profile" />
+</menu>

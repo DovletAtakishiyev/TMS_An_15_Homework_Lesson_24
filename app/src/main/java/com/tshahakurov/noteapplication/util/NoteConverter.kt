@@ -1,27 +1,23 @@
 package com.tshahakurov.noteapplication.util
 
-import com.tshahakurov.noteapplication.model.ListItem
-import com.tshahakurov.noteapplication.model.entity.ListItemEntity
+import com.tshahakurov.noteapplication.model.Note
+import com.tshahakurov.noteapplication.model.entity.NoteEntity
 
-fun ArrayList<ListItemEntity>.toNoteList(): ArrayList<ListItem> = this.map {
-    it.toListItem()
-} as ArrayList<ListItem>
+fun ArrayList<NoteEntity>.toNoteList(): ArrayList<Note> = this.map {
+    it.toNote()
+} as ArrayList<Note>
 
-fun ListItemEntity.toListItem(): ListItem {
-    return when (this) {
-        is ListItemEntity.BasicNote -> ListItem.BasicNote(
-            id, title, body, date
-        )
-
-        is ListItemEntity.ImportantNote -> ListItem.ImportantNote(
-            id, title, body, date, priority
-        )
+fun NoteEntity.toNote(): Note {
+    return if (isImportant) {
+        Note.ImportantNote(id!!, title, body, date, priority!!)
+    } else {
+        Note.BasicNote(id!!, title, body, date)
     }
 }
 
-fun ListItem.toListItemEntity(): ListItemEntity {
+fun Note.toNoteEntity(): NoteEntity {
     return when (this) {
-        is ListItem.BasicNote -> ListItemEntity.BasicNote(id, title, body, date)
-        is ListItem.ImportantNote -> ListItemEntity.ImportantNote(id, title, body, date, priority)
+        is Note.BasicNote -> NoteEntity(id, title, body, date, false, null)
+        is Note.ImportantNote -> NoteEntity(id, title, body, date, true, priority)
     }
 }

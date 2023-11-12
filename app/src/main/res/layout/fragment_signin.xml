@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".view.fragment.registration.signin.SignInFragment">
+    tools:context=".view.fragment.onboard.registration.signin.SignInFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardBackground"
