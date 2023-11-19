@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.tshahakurov.noteapplication.repository.SharedPreferencesRepo
 import com.tshahakurov.noteapplication.util.isEmailValid
+import dagger.hilt.android.AndroidEntryPoint
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
 

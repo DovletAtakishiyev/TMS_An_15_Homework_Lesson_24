@@ -12,6 +12,7 @@ import com.tshahakurov.noteapplication.view.fragment.main.note.bookmark.Bookmark
 import com.tshahakurov.noteapplication.view.fragment.main.note.list.NoteListFragment
 import com.tshahakurov.noteapplication.view.fragment.main.note.search.SearchNoteFragment
 import com.tshahakurov.noteapplication.view.fragment.main.profile.UserProfileFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 class MainFragment : Fragment() {
 

@@ -11,7 +11,9 @@ import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.view.fragment.main.MainFragment
 import com.tshahakurov.noteapplication.view.fragment.onboard.onboarding.OnboardingFragment
 import com.tshahakurov.noteapplication.view.fragment.splash.SplashFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainActivityViewModel by viewModels()

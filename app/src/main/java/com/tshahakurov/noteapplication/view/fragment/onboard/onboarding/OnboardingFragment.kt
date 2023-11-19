@@ -10,6 +10,7 @@ import com.tshahakurov.noteapplication.databinding.FragmentOnboardingBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
 import com.tshahakurov.noteapplication.view.fragment.onboard.registration.login.LoginFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 class OnboardingFragment : Fragment() {
 

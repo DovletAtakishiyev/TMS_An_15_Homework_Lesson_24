@@ -11,7 +11,9 @@ import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import com.tshahakurov.noteapplication.databinding.FragmentAddNoteBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddNoteFragment : Fragment() {
 
     private var _binding: FragmentAddNoteBinding? = null

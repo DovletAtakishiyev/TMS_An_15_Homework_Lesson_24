@@ -1,20 +1,23 @@
 package com.tshahakurov.noteapplication.repository
 
-import com.tshahakurov.noteapplication.db.MyDataBase
+import com.tshahakurov.noteapplication.db.NoteDao
 import com.tshahakurov.noteapplication.model.Note
 import com.tshahakurov.noteapplication.model.entity.NoteEntity
 import com.tshahakurov.noteapplication.util.toNote
 import com.tshahakurov.noteapplication.util.toNoteEntity
 import com.tshahakurov.noteapplication.util.toNoteList
+import javax.inject.Inject
 
-class NoteRepository {
+class NoteRepository @Inject constructor(
+    private val noteDao: NoteDao
+){
 
     suspend fun getNoteList(): ArrayList<Note> =
-        (MyDataBase.noteDao?.getAllNotes() as? ArrayList<NoteEntity>)?.toNoteList() ?: arrayListOf()
+        (noteDao.getAllNotes() as? ArrayList<NoteEntity>)?.toNoteList() ?: arrayListOf()
 
-    suspend fun getNoteById(id: Int) = MyDataBase.noteDao?.getNoteById(id)?.toNote()
+    suspend fun getNoteById(id: Int) = noteDao.getNoteById(id).toNote()
 
     suspend fun addNoteToDataBase(note: Note) {
-        MyDataBase.noteDao?.addNote(note.toNoteEntity())
+        noteDao.addNote(note.toNoteEntity())
     }
 }

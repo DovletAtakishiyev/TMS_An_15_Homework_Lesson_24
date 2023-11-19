@@ -14,6 +14,8 @@ import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
 import com.tshahakurov.noteapplication.view.fragment.main.note.list.NoteListFragment
 import com.tshahakurov.noteapplication.view.fragment.onboard.registration.signin.SignInFragment
+import dagger.hilt.android.AndroidEntryPoint
+
 
 class LoginFragment : Fragment() {
 

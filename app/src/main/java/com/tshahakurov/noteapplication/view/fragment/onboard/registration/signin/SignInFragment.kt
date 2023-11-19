@@ -12,6 +12,7 @@ import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentSigninBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.view.fragment.main.note.list.NoteListFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 class SignInFragment : Fragment() {
 

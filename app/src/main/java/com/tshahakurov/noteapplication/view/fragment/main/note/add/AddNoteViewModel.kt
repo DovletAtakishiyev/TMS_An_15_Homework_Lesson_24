@@ -6,11 +6,17 @@ import androidx.lifecycle.viewModelScope
 import com.tshahakurov.noteapplication.model.Note
 import com.tshahakurov.noteapplication.repository.NoteRepository
 import com.tshahakurov.noteapplication.util.Util
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AddNoteViewModel : ViewModel() {
+@HiltViewModel
+class AddNoteViewModel @Inject constructor(
+    private val noteRepository: NoteRepository
+) : ViewModel() {
+
     val title = MutableLiveData<String>()
     val body = MutableLiveData<String>()
     val isImportant = MutableLiveData<Boolean>()
@@ -18,11 +24,11 @@ class AddNoteViewModel : ViewModel() {
 
     val isAdding = MutableLiveData<Boolean>(false)
 
-    private val noteRepository = NoteRepository()
+
     private lateinit var note: Note
 
     fun addNote() {
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
             isAdding.postValue(true)
             createNote()
             delay(500)

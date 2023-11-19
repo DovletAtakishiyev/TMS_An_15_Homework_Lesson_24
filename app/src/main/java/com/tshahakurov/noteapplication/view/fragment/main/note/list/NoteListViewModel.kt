@@ -5,13 +5,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tshahakurov.noteapplication.model.Note
 import com.tshahakurov.noteapplication.repository.NoteRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class NoteListViewModel : ViewModel() {
+@HiltViewModel
+class NoteListViewModel @Inject constructor(
+    private val repository: NoteRepository
+) : ViewModel() {
+
     val noteList = MutableLiveData<ArrayList<Note>>()
-
-    private val repository = NoteRepository()
 
     fun getNoteList() {
         viewModelScope.launch(Dispatchers.IO) {

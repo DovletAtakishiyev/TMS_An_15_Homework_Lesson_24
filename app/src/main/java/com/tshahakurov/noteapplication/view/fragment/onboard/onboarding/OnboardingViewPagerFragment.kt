@@ -9,6 +9,7 @@ import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentOnboardingViewPagerBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.view.fragment.onboard.registration.login.LoginFragment
+import dagger.hilt.android.AndroidEntryPoint
 
 class OnboardingViewPagerFragment : Fragment() {
 

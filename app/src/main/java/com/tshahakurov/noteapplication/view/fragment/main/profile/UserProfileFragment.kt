@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.tshahakurov.noteapplication.databinding.FragmentUserProfileBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 class UserProfileFragment : Fragment() {
 

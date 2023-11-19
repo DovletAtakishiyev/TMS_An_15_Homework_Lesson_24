@@ -11,9 +11,11 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.tshahakurov.noteapplication.databinding.FragmentNoteInformationBinding
 import com.tshahakurov.noteapplication.model.Note
+import dagger.hilt.android.AndroidEntryPoint
 
 const val BUNDLE_KEY = "note"
 
+@AndroidEntryPoint
 class NoteInformationFragment : Fragment() {
 
     private var _binding: FragmentNoteInformationBinding? = null

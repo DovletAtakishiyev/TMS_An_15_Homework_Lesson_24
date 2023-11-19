@@ -16,7 +16,9 @@ import com.tshahakurov.noteapplication.view.fragment.main.note.add.AddNoteFragme
 import com.tshahakurov.noteapplication.view.fragment.main.note.info.BUNDLE_KEY
 import com.tshahakurov.noteapplication.view.fragment.main.note.info.NoteInformationFragment
 import com.tshahakurov.noteapplication.view.fragment.main.note.list.adapter.CustomAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NoteListFragment : Fragment() {
 
     private var _binding: FragmentNoteListBinding? = null
