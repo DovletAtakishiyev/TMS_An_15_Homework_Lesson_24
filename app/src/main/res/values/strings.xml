@@ -40,4 +40,12 @@
     <string name="important_chb">Mark as Important</string>
     <string name="priority">Priority</string>
     <string name="priority_input">5/10</string>
+
+    <string name="edit_menu_item">Edit</string>
+    <string name="delete_menu_item">Delete</string>
+
+    <string name="delete_dialog">Are you sure to delete?</string>
+    <string name="logout_dialog">Are you sure to logout?</string>
+    <string name="choice_yes">Yes</string>
+    <string name="choice_no">No</string>
 </resources>

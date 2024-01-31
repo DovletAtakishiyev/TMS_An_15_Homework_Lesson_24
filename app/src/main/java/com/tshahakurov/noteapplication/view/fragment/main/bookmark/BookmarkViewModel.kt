@@ -1,6 +1,5 @@
-package com.tshahakurov.noteapplication.view.fragment.main.note.info
+package com.tshahakurov.noteapplication.view.fragment.main.bookmark
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,20 +11,20 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class NoteInformationViewModel @Inject constructor(
+class BookmarkViewModel @Inject constructor(
     private val repository: NoteRepository
 ) : ViewModel() {
 
-    val note = MutableLiveData<Note>()
+    val noteList = MutableLiveData<ArrayList<Note>>()
 
-    fun getNoteById(id: Int) {
+    fun getBookmarkNotes() {
         viewModelScope.launch(Dispatchers.IO) {
-            val tempNote = repository.getNoteById(id)
-            tempNote.let {
-                note.postValue(it)
-            }
+            noteList.postValue(
+                repository.getBookmarkNoteList().apply {
+                    if (isNotEmpty())
+                        reverse()
+                }
+            )
         }
     }
-
-    fun provideCurrentNote(): String = note.value.toString()
 }

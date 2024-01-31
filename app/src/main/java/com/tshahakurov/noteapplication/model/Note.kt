@@ -2,13 +2,24 @@ package com.tshahakurov.noteapplication.model
 
 sealed interface Note {
     val id: Int?
+    var bookmark: Boolean
+
+    fun provideTitle(): String
+    fun provideBody(): String
+    fun provideDate(): String
 
     data class BasicNote(
         override val id: Int?,
         val title: String,
         val body: String,
-        val date: String
+        val date: String,
+        override var bookmark: Boolean
     ) : Note {
+        override fun provideTitle(): String = title
+
+        override fun provideBody(): String = body
+
+        override fun provideDate(): String = date
 
         override fun toString(): String {
             return """Basic Note :
@@ -24,7 +35,8 @@ sealed interface Note {
         val title: String,
         val body: String,
         val date: String,
-        val priority: Int
+        val priority: Int,
+        override var bookmark: Boolean
     ) : Note {
 
         constructor(
@@ -35,8 +47,15 @@ sealed interface Note {
             basicNote.title,
             basicNote.body,
             basicNote.date,
-            priority
+            priority,
+            basicNote.bookmark
         )
+
+        override fun provideTitle(): String = title
+
+        override fun provideBody(): String = body
+
+        override fun provideDate(): String = date
 
         override fun toString(): String {
             return """Important Note : 

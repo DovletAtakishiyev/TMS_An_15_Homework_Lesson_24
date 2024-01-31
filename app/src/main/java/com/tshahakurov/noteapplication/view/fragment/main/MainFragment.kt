@@ -1,6 +1,7 @@
 package com.tshahakurov.noteapplication.view.fragment.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,9 @@ import android.view.ViewGroup
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentMainBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
-import com.tshahakurov.noteapplication.view.fragment.main.note.bookmark.BookmarkFragment
+import com.tshahakurov.noteapplication.view.fragment.main.bookmark.BookmarkFragment
 import com.tshahakurov.noteapplication.view.fragment.main.note.list.NoteListFragment
-import com.tshahakurov.noteapplication.view.fragment.main.note.search.SearchNoteFragment
+import com.tshahakurov.noteapplication.view.fragment.main.search.SearchNoteFragment
 import com.tshahakurov.noteapplication.view.fragment.main.profile.UserProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 

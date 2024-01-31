@@ -2,6 +2,8 @@ package com.tshahakurov.noteapplication.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.tshahakurov.noteapplication.db.AppDataBase
 import com.tshahakurov.noteapplication.db.NoteDao
 import com.tshahakurov.noteapplication.util.Util
@@ -18,10 +20,19 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideDB(@ApplicationContext app: Context): AppDataBase{
-        return Room.databaseBuilder(
-            app, AppDataBase::class.java, Util.DATA_BASE_NAME
-        ).build()
+    fun provideDB(@ApplicationContext app: Context): AppDataBase {
+        val migration1to2 = object : Migration(1, 2) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    "alter table ${Util.NOTE_TABLE_NAME} add column ${Util.BOOKMARK_COLUMN_NAME} integer not null default 0"
+                )
+            }
+        }
+
+        return Room
+            .databaseBuilder(app, AppDataBase::class.java, Util.DATA_BASE_NAME)
+            .addMigrations(migration1to2)
+            .build()
     }
 
     @Provides

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_layout"
     android:layout_width="match_parent"
     android:layout_height="130dp"
     android:layout_marginStart="10dp"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="10dp"
-    android:backgroundTint="@color/card_background_1"
+    android:backgroundTint="@color/card_background_important"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +23,8 @@
             android:layout_marginStart="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/important_icon"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/cardTitle"
@@ -31,18 +33,29 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/default_title"
+            app:layout_constraintBottom_toTopOf="@id/cardBody"
             app:layout_constraintStart_toEndOf="@id/importantImageView"
-            app:layout_constraintTop_toTopOf="@id/importantImageView" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/cardBody"
             style="@style/DefaultText.Primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:text="@string/default_body"
-            app:layout_constraintStart_toStartOf="@id/cardTitle"
+            app:layout_constraintBottom_toTopOf="@id/cardPriority"
+            app:layout_constraintStart_toStartOf="@+id/cardTitle"
             app:layout_constraintTop_toBottomOf="@id/cardTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cardPriority"
+            style="@style/DefaultText.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_priority"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cardBody"
+            app:layout_constraintTop_toBottomOf="@+id/cardBody" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/cardDate"
@@ -52,17 +65,15 @@
             android:layout_marginEnd="20dp"
             android:text="@string/default_date"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/cardTitle" />
+            app:layout_constraintBaseline_toBaselineOf="@id/cardPriority" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/cardPriority"
-            style="@style/DefaultText.Primary"
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cardBookmark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/default_priority"
-            app:layout_constraintEnd_toEndOf="@id/cardDate"
-            app:layout_constraintTop_toBottomOf="@id/cardDate" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

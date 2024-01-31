@@ -36,7 +36,7 @@ class OnboardingFragment : Fragment() {
             }
 
             loginButtonText.setOnClickListener {
-                parentFragmentManager.replaceFragment(
+                parentFragmentManager.replaceFragmentWithStack(
                     R.id.fragmentContainer, LoginFragment()
                 )
             }

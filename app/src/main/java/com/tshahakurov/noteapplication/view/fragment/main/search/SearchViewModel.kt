@@ -1,6 +1,5 @@
-package com.tshahakurov.noteapplication.view.fragment.main.note.info
+package com.tshahakurov.noteapplication.view.fragment.main.search
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,20 +11,19 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class NoteInformationViewModel @Inject constructor(
+class SearchViewModel @Inject constructor(
     private val repository: NoteRepository
 ) : ViewModel() {
 
-    val note = MutableLiveData<Note>()
+    val noteList = MutableLiveData<ArrayList<Note>>()
 
-    fun getNoteById(id: Int) {
+    fun searchForNoteByTitle(title: String){
         viewModelScope.launch(Dispatchers.IO) {
-            val tempNote = repository.getNoteById(id)
-            tempNote.let {
-                note.postValue(it)
-            }
+            if (title.isNotBlank())
+                noteList.postValue(repository.findNoteByTitle(title))
+            else
+                noteList.postValue(arrayListOf())
         }
     }
 
-    fun provideCurrentNote(): String = note.value.toString()
 }

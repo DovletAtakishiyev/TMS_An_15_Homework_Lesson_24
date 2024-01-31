@@ -20,4 +20,18 @@ class NoteRepository @Inject constructor(
     suspend fun addNoteToDataBase(note: Note) {
         noteDao.addNote(note.toNoteEntity())
     }
+
+    suspend fun deleteNote(note: Note){
+        noteDao.removeNote(note = note.toNoteEntity())
+    }
+
+    suspend fun editNote(note: Note){
+        noteDao.editNote(note = note.toNoteEntity())
+    }
+
+    suspend fun getBookmarkNoteList(): ArrayList<Note> =
+        (noteDao.getBookmarkNotes() as? ArrayList<NoteEntity>)?.toNoteList() ?: arrayListOf()
+
+    suspend fun findNoteByTitle(title: String): ArrayList<Note> =
+        (noteDao.findNoteByTitle(title) as? ArrayList<NoteEntity>)?.toNoteList() ?: arrayListOf()
 }

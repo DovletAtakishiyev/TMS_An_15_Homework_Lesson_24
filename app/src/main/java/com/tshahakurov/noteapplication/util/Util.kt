@@ -15,6 +15,7 @@ object Util {
     const val DATE_COLUMN_NAME = "date"
     const val IS_IMPORTANT_COLUMN_NAME = "is_important"
     const val PRIORITY_COLUMN_NAME = "priority"
+    const val BOOKMARK_COLUMN_NAME = "bookmark"
 
     fun getCurrentDate(): String =
         SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(Date())

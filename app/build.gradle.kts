@@ -33,20 +33,38 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.2"
+    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
     buildFeatures{
         viewBinding = true
+        compose = true
     }
 }
 
 dependencies {
+    //Search Material
+    implementation("androidx.compose.material3:material3:1.1.2")
+
+    // Compose
+    val composeVersion = "1.5.2"
+    implementation("androidx.compose.ui:ui:$composeVersion")
+    implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.5.4")
+    implementation("androidx.compose.ui:ui-tooling-preview:1.5.4")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0-alpha01")
+
+
+
     // Hilt
     val hiltVersion = "2.48.1"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
-    annotationProcessor("com.google.dagger:hilt-compiler:$hiltVersion")
-//    kapt("com.google.dagger:hilt-android-compiler:2.44")
+//    annotationProcessor("com.google.dagger:hilt-compiler:$hiltVersion")
+    kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
 
     // Room DB
     val roomVersion = "2.6.0"

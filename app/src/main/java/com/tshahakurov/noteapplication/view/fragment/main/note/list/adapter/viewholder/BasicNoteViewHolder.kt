@@ -1,6 +1,7 @@
 package com.tshahakurov.noteapplication.view.fragment.main.note.list.adapter.viewholder
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -11,13 +12,26 @@ import com.tshahakurov.noteapplication.model.Note
 class BasicNoteViewHolder(private val binding: NoteItemBasicBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(item: Note.BasicNote, onClickListener: (Note) -> Unit) {
+    fun bind(
+        item: Note.BasicNote,
+        onClickListener: (Note) -> Unit,
+        onLongClickListener: (Note, View) -> Unit,
+        onBookmarkClicked: (Note, Boolean) -> Unit
+    ) {
         with(binding) {
             cardTitle.text = item.title
             cardBody.text = item.body
             cardDate.text = item.date
+            cardBookmark.isChecked = item.bookmark
 
             root.setOnClickListener { onClickListener(item) }
+            root.setOnLongClickListener {
+                onLongClickListener(item, root)
+                true
+            }
+            cardBookmark.setOnCheckedChangeListener { _, isChecked ->
+                onBookmarkClicked(item, isChecked)
+            }
 
             bindBackground()
         }

@@ -22,7 +22,7 @@ class AddNoteViewModel @Inject constructor(
     val isImportant = MutableLiveData<Boolean>()
     val priority = MutableLiveData<Int>()
 
-    val isAdding = MutableLiveData<Boolean>(false)
+    val isAdding = MutableLiveData(false)
 
 
     private lateinit var note: Note
@@ -43,7 +43,7 @@ class AddNoteViewModel @Inject constructor(
         val currentDate = Util.getCurrentDate()
 
         if (titleValue.isNotBlank() && bodyValue.isNotBlank()) {
-            val basicNote = Note.BasicNote(null, titleValue, bodyValue, currentDate)
+            val basicNote = Note.BasicNote(null, titleValue, bodyValue, currentDate, false)
             note = if (isImportant.value == true) {
                 val priorityValue = priority.value ?: 5
                 val importantNote = Note.ImportantNote(basicNote, priorityValue)

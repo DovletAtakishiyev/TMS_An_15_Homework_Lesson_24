@@ -19,5 +19,7 @@ data class NoteEntity(
     @ColumnInfo(name = Util.IS_IMPORTANT_COLUMN_NAME)
     val isImportant: Boolean,
     @ColumnInfo(name = Util.PRIORITY_COLUMN_NAME)
-    val priority: Int?
+    val priority: Int?,
+    @ColumnInfo(name = Util.BOOKMARK_COLUMN_NAME)
+    val isBookmark: Boolean
 )

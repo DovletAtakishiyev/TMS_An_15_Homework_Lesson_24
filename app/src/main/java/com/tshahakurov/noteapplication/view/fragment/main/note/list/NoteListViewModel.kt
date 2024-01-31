@@ -15,11 +15,25 @@ class NoteListViewModel @Inject constructor(
     private val repository: NoteRepository
 ) : ViewModel() {
 
-    val noteList = MutableLiveData<ArrayList<Note>>()
+    val noteList = MutableLiveData<List<Note>>()
 
     fun getNoteList() {
         viewModelScope.launch(Dispatchers.IO) {
-            noteList.postValue(repository.getNoteList())
+            noteList.postValue(repository.getNoteList().asReversed())
+        }
+    }
+
+    fun removeNote(note: Note){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteNote(note)
+            getNoteList()
+        }
+    }
+
+    fun addBookmark(note: Note, isChecked: Boolean){
+        viewModelScope.launch(Dispatchers.IO) {
+            note.bookmark = isChecked
+            repository.editNote(note)
         }
     }
 }

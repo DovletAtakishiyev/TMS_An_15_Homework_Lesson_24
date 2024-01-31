@@ -3,20 +3,19 @@ package com.tshahakurov.noteapplication.view.fragment.onboard.registration.login
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.tshahakurov.noteapplication.repository.SharedPreferencesRepo
+import com.tshahakurov.noteapplication.repository.SharedPreferencesRepository
 import com.tshahakurov.noteapplication.util.isEmailValid
-import dagger.hilt.android.AndroidEntryPoint
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val sharedPreferencesRepo = SharedPreferencesRepo(application.applicationContext)
+    private val sharedPreferencesRepository = SharedPreferencesRepository(application.applicationContext)
     val email = MutableLiveData("")
     val password = MutableLiveData("")
 
     fun validateUser(): Boolean {
         return if (isEmailValid() && isPasswordIsValid()) {
-            sharedPreferencesRepo.setUserEmail(email.value.toString())
-            sharedPreferencesRepo.setAccount()
+            sharedPreferencesRepository.setUserEmail(email.value.toString())
+            sharedPreferencesRepository.setLoggedIn()
             true
         } else false
     }

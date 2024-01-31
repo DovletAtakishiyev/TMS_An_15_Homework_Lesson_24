@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentOnboardingViewPagerBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
+import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
 import com.tshahakurov.noteapplication.view.fragment.onboard.registration.login.LoginFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,9 +32,11 @@ class OnboardingViewPagerFragment : Fragment() {
             circleIndicator.setViewPager(viewPager)
 
             skipButtonText.setOnClickListener {
-                parentFragmentManager.replaceFragment(
+                parentFragmentManager.popBackStack()
+                parentFragmentManager.replaceFragmentWithStack(
                     R.id.fragmentContainer, LoginFragment()
                 )
+
             }
         }
     }

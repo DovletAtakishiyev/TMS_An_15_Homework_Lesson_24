@@ -12,6 +12,7 @@ import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentLoginBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
+import com.tshahakurov.noteapplication.view.fragment.main.MainFragment
 import com.tshahakurov.noteapplication.view.fragment.main.note.list.NoteListFragment
 import com.tshahakurov.noteapplication.view.fragment.onboard.registration.signin.SignInFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,19 +47,21 @@ class LoginFragment : Fragment() {
             }
 
             loginButton.setOnClickListener {
-                if (viewModel.validateUser()){
-                    Toast.makeText(requireContext(), R.string.login_successful, Toast.LENGTH_SHORT)
-                        .show()
-
-                    parentFragmentManager.replaceFragment(
-                        R.id.fragmentContainer, NoteListFragment()
-                    )
-                } else {
-                    passwordInputMain.setText("")
-                    Toast.makeText(requireContext(), R.string.registration_error, Toast.LENGTH_SHORT)
-                        .show()
-                }
-
+//                if (viewModel.validateUser()){
+//                    Toast.makeText(requireContext(), R.string.login_successful, Toast.LENGTH_SHORT)
+//                        .show()
+//
+//                    parentFragmentManager.replaceFragment(
+//                        R.id.fragmentContainer, MainFragment()
+//                    )
+//                } else {
+//                    passwordInputMain.setText("")
+//                    Toast.makeText(requireContext(), R.string.registration_error, Toast.LENGTH_SHORT)
+//                        .show()
+//                }
+                parentFragmentManager.replaceFragmentWithStack(
+                    R.id.fragmentContainer, SignInFragment()
+                )
 
             }
 

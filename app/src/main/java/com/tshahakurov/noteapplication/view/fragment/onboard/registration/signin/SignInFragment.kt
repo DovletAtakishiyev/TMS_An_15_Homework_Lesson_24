@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentSigninBinding
 import com.tshahakurov.noteapplication.util.replaceFragment
+import com.tshahakurov.noteapplication.view.fragment.main.MainFragment
 import com.tshahakurov.noteapplication.view.fragment.main.note.list.NoteListFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -55,8 +56,10 @@ class SignInFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     )
                         .show()
+                    parentFragmentManager.popBackStack()
+                    parentFragmentManager.popBackStack()
                     parentFragmentManager.replaceFragment(
-                        R.id.fragmentContainer, NoteListFragment()
+                        R.id.fragmentContainer, MainFragment()
                     )
                 } else {
                     passwordInputMain.setText("")

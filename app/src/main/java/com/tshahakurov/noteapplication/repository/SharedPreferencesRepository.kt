@@ -2,28 +2,29 @@ package com.tshahakurov.noteapplication.repository
 
 import android.content.Context
 import androidx.core.content.edit
+import com.tshahakurov.noteapplication.model.User
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
 const val APP_SHARED_PREF = "app_shared_pref"
-const val HAS_ACCOUNT = "was_logged"
+const val LOGGED_IN = "is_logged_in"
 
 const val USER_SHARED_PREF = "user_shared_pref"
 const val USER_FIRST_NAME = "user_first_name"
 const val USER_LAST_NAME = "user_last_name"
 const val USER_EMAIL = "user_email"
 
-class SharedPreferencesRepo(context: Context) {
+class SharedPreferencesRepository @Inject constructor(
+    @ApplicationContext context: Context
+) {
 
     // -- -- -- App Preferences  -- -- -- //
-    private val appPreferences = context.getSharedPreferences(
-        APP_SHARED_PREF, Context.MODE_PRIVATE
-    )
+    private val appPreferences = context.getSharedPreferences(APP_SHARED_PREF, Context.MODE_PRIVATE)
 
-    fun hasAccount() = appPreferences.getBoolean(HAS_ACCOUNT, false)
+    fun wasLoggedIn() = appPreferences.getBoolean(LOGGED_IN, false)
 
-    fun setAccount() {
-        appPreferences.edit {
-            putBoolean(HAS_ACCOUNT, true)
-        }
+    fun setLoggedIn() {
+        appPreferences.edit { putBoolean(LOGGED_IN, true) }
     }
 
     // -- -- -- User Preferences -- -- -- //
@@ -54,6 +55,13 @@ class SharedPreferencesRepo(context: Context) {
     fun getUserFirstName() = userPreferences.getString(USER_FIRST_NAME, null)
 
     fun getUserLastName() = userPreferences.getString(USER_LAST_NAME, null)
+
+    fun getUser() = User(
+        id = 0,
+        email = getUserEmail(),
+        firstName = getUserFirstName(),
+        lastName = getUserLastName()
+    )
 
     // -- -- -- Clean -- -- -- //
     fun logout() {

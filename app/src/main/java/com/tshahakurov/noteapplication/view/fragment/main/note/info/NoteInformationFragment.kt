@@ -2,10 +2,12 @@ package com.tshahakurov.noteapplication.view.fragment.main.note.info
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -74,19 +76,17 @@ class NoteInformationFragment : Fragment() {
     }
 
     private fun shareButtonListener() {
-        val shareMessageIntent = Intent(Intent.ACTION_SEND).apply {
-            type = "text/plain"
-            putExtra(Intent.EXTRA_TEXT, generateMessage(viewModel.note.value))
-        }
-        val intentChooser = Intent.createChooser(shareMessageIntent, "Share using ...")
-
         binding.shareButton.setOnClickListener {
+            val shareMessageIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, viewModel.provideCurrentNote())
+            Log.wtf("suita", "------------------- 1")
+        }
+            val intentChooser = Intent.createChooser(shareMessageIntent, "Share using ...")
+            Log.wtf("suita", "------------------- 2")
+            Log.wtf("suita", viewModel.provideCurrentNote())
             startActivity(intentChooser)
         }
-    }
-
-    private fun generateMessage(note: Note?): String {
-        return note.toString()
     }
 
     private fun getPriority(item: Note.ImportantNote): String {
