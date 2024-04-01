@@ -1,16 +1,13 @@
 package com.tshahakurov.noteapplication.view.fragment.onboard.onboarding
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentOnboardingBinding
-import com.tshahakurov.noteapplication.util.replaceFragment
-import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
-import com.tshahakurov.noteapplication.view.fragment.onboard.registration.login.LoginFragment
-import dagger.hilt.android.AndroidEntryPoint
 
 class OnboardingFragment : Fragment() {
 
@@ -30,14 +27,14 @@ class OnboardingFragment : Fragment() {
 
         with(binding) {
             discoverButton.setOnClickListener {
-                parentFragmentManager.replaceFragmentWithStack(
-                    R.id.fragmentContainer, OnboardingViewPagerFragment()
+                findNavController().navigate(
+                    R.id.action_onboardingFragment_to_onboardingViewPagerFragment
                 )
             }
 
             loginButtonText.setOnClickListener {
-                parentFragmentManager.replaceFragmentWithStack(
-                    R.id.fragmentContainer, LoginFragment()
+                findNavController().navigate(
+                    R.id.action_onboardingFragment_to_loginFragment
                 )
             }
         }

@@ -8,19 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentNoteListBinding
 import com.tshahakurov.noteapplication.model.Note
-import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
-import com.tshahakurov.noteapplication.view.fragment.main.note.add.AddNoteFragment
-import com.tshahakurov.noteapplication.view.fragment.main.note.info.BUNDLE_KEY
-import com.tshahakurov.noteapplication.view.fragment.main.note.info.NoteInformationFragment
-import com.tshahakurov.noteapplication.view.fragment.main.note.list.adapter.CustomAdapter
 import com.tshahakurov.noteapplication.view.fragment.main.dialog.DeleteDialog
+import com.tshahakurov.noteapplication.view.fragment.main.note.list.adapter.CustomAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,9 +43,8 @@ class NoteListFragment : Fragment() {
         viewModel.getNoteList()
 
         binding.floatingActionButton.setOnClickListener {
-            parentFragmentManager.replaceFragmentWithStack(
-                R.id.mainFragmentContainer,
-                AddNoteFragment()
+            findNavController().navigate(
+                R.id.action_item_list_to_addNoteFragment
             )
         }
     }
@@ -79,14 +74,9 @@ class NoteListFragment : Fragment() {
     }
 
     private fun onItemClicked(note: Note) {
-
-        parentFragmentManager
-            .beginTransaction()
-            .replace(R.id.mainFragmentContainer, NoteInformationFragment().apply {
-                arguments = bundleOf(BUNDLE_KEY to note.id)
-            })
-            .addToBackStack("note_info")
-            .commit()
+        findNavController().navigate(
+            NoteListFragmentDirections.actionItemListToNoteInformationFragment(note.id!!)
+        )
     }
 
     private fun onItemLongClicked(note: Note, view: View?) {

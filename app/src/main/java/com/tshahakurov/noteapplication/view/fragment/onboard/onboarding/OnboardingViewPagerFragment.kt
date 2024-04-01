@@ -1,16 +1,13 @@
 package com.tshahakurov.noteapplication.view.fragment.onboard.onboarding
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentOnboardingViewPagerBinding
-import com.tshahakurov.noteapplication.util.replaceFragment
-import com.tshahakurov.noteapplication.util.replaceFragmentWithStack
-import com.tshahakurov.noteapplication.view.fragment.onboard.registration.login.LoginFragment
-import dagger.hilt.android.AndroidEntryPoint
 
 class OnboardingViewPagerFragment : Fragment() {
 
@@ -32,11 +29,9 @@ class OnboardingViewPagerFragment : Fragment() {
             circleIndicator.setViewPager(viewPager)
 
             skipButtonText.setOnClickListener {
-                parentFragmentManager.popBackStack()
-                parentFragmentManager.replaceFragmentWithStack(
-                    R.id.fragmentContainer, LoginFragment()
+                findNavController().navigate(
+                    R.id.action_onboardingViewPagerFragment_to_loginFragment
                 )
-
             }
         }
     }

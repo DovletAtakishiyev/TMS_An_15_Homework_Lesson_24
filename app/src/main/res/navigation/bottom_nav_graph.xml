@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/item_list">
+
+    <fragment
+        android:id="@+id/item_list"
+        android:name="com.tshahakurov.noteapplication.view.fragment.main.note.list.NoteListFragment"
+        android:label="fragment_note_list"
+        tools:layout="@layout/fragment_note_list" >
+        <action
+            android:id="@+id/action_item_list_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/action_item_list_to_noteInformationFragment"
+            app:destination="@id/noteInformationFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/item_search"
+        android:name="com.tshahakurov.noteapplication.view.fragment.main.search.SearchNoteFragment"
+        android:label="fragment_search_note"
+        tools:layout="@layout/fragment_search_note" />
+    <fragment
+        android:id="@+id/item_bookmark"
+        android:name="com.tshahakurov.noteapplication.view.fragment.main.bookmark.BookmarkFragment"
+        android:label="fragment_bookmark"
+        tools:layout="@layout/fragment_bookmark" />
+    <fragment
+        android:id="@+id/item_profile"
+        android:name="com.tshahakurov.noteapplication.view.fragment.main.profile.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.tshahakurov.noteapplication.view.fragment.main.note.add.AddNoteFragment"
+        android:label="fragment_add_note"
+        tools:layout="@layout/fragment_add_note" />
+    <fragment
+        android:id="@+id/noteInformationFragment"
+        android:name="com.tshahakurov.noteapplication.view.fragment.main.note.info.NoteInformationFragment"
+        android:label="fragment_note_information"
+        tools:layout="@layout/fragment_note_information">
+        <argument
+            android:name="note_id"
+            app:argType="integer"
+            />
+    </fragment>
+</navigation>

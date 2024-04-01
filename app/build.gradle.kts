@@ -4,6 +4,7 @@ plugins {
     id("kotlin-parcelize")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -48,6 +49,12 @@ android {
 dependencies {
     //Search Material
     implementation("androidx.compose.material3:material3:1.1.2")
+
+    // Navigation Graph
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-fragment:2.3.0")
+    implementation("androidx.navigation:navigation-ui:2.3.0")
 
     // Compose
     val composeVersion = "1.5.2"

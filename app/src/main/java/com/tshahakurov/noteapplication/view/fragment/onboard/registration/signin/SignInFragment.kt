@@ -1,19 +1,16 @@
 package com.tshahakurov.noteapplication.view.fragment.onboard.registration.signin
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentSigninBinding
-import com.tshahakurov.noteapplication.util.replaceFragment
-import com.tshahakurov.noteapplication.view.fragment.main.MainFragment
-import com.tshahakurov.noteapplication.view.fragment.main.note.list.NoteListFragment
-import dagger.hilt.android.AndroidEntryPoint
 
 class SignInFragment : Fragment() {
 
@@ -54,13 +51,11 @@ class SignInFragment : Fragment() {
                         requireContext(),
                         R.string.sign_in_successful,
                         Toast.LENGTH_SHORT
+                    ).show()
+                    findNavController().navigate(
+                        R.id.action_signInFragment_to_mainFragment
                     )
-                        .show()
-                    parentFragmentManager.popBackStack()
-                    parentFragmentManager.popBackStack()
-                    parentFragmentManager.replaceFragment(
-                        R.id.fragmentContainer, MainFragment()
-                    )
+
                 } else {
                     passwordInputMain.setText("")
                     Toast
@@ -70,7 +65,7 @@ class SignInFragment : Fragment() {
             }
 
             loginButtonText.setOnClickListener {
-                parentFragmentManager.popBackStack()
+                findNavController().popBackStack()
             }
         }
     }

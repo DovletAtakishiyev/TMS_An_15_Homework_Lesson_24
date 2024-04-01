@@ -4,16 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.compose.material.Text
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.tshahakurov.noteapplication.R
 import com.tshahakurov.noteapplication.databinding.FragmentUserProfileBinding
 import com.tshahakurov.noteapplication.repository.SharedPreferencesRepository
-import com.tshahakurov.noteapplication.util.replaceFragment
 import com.tshahakurov.noteapplication.view.fragment.main.dialog.LogoutDialog
-import com.tshahakurov.noteapplication.view.fragment.onboard.onboarding.OnboardingFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -41,9 +37,9 @@ class UserProfileFragment : Fragment() {
             if (user != null) {
                 ProfileScreen(user = user) {
                     LogoutDialog {
-                        parentFragment?.parentFragmentManager?.replaceFragment(
-                            R.id.fragmentContainer, OnboardingFragment()
-                        )
+//                        parentFragment?.parentFragmentManager?.replaceFragment(
+//                            R.id.fragmentContainer, OnboardingFragment()
+//                        )
                         viewModel.logout()
                     }.show(childFragmentManager, "suita")
                 }
